@@ -4,6 +4,7 @@ $primary-contrast: #000;
 
 @import 'normalize.css/normalize.css';
 @import 'components/counter/counter.scss';
+@import 'components/accordion/accordion.scss';
 
 body {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen,
@@ -13,4 +14,11 @@ body {
 ::selection {
   background: $primary;
   color: $primary-contrast;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  display: block;
+  margin: auto;
 }

@@ -7,8 +7,9 @@ import pageNotFoundTemplate from './pages/404.html';
 import indexTemplate from './pages/index.html';
 
 import './components/counter/counter.module';
+import './components/accordion/accordion.module';
 
-angular.module('app', ['ngRoute', 'counter']);
+angular.module('app', ['ngRoute', 'counter', 'accordion']);
 
 angular.module('app').config([
   '$routeProvider',
