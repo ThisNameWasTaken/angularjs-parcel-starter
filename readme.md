@@ -1,6 +1,6 @@
-# Parcel Starter
+# AngularJs Parcel Starter
 
-This is a simple [Parcel](https://parceljs.org/) boilerplate to get you up and running.
+This is a simple [Parcel](https://parceljs.org/) boilerplate to get you up and running with [AngularJs](https://angularjs.org/).
 
 ## Scripts
 
@@ -16,7 +16,7 @@ To change the host and port run `npm start -- --host local.my-host.com --port 30
 npm run build
 ```
 
-Builds for production into a folder called.
+Builds for production into a folder called `dist`.
 
 To change the folder's name run `npm run build -- -out-dir custom-named-folder`.
 
@@ -24,6 +24,17 @@ For more flags checkout [Parcel's CLI](https://parceljs.org/cli.html) Docs.
 
 ## Included packages
 
-The only runtime dependency is [normalize.css](https://necolas.github.io/normalize.css/) which a lightweight css framework that makes browsers render all elements more consistently.
+### Runtime Dependencies
 
-Parcel and [SASS](https://sass-lang.com/) are the only dev dependencies. However if you wish to use things such as [TypeScript](https://www.typescriptlang.org/), [EJS](https://ejs.co/) or any other language supersets, Parcel will automatically add those as dev dependencies.
+- [normalize.css](https://necolas.github.io/normalize.css/)
+- [AngularJs](https://www.npmjs.com/package/angular)
+- [angular-route](https://www.npmjs.com/package/angular-route)
+
+### Development Dependencies
+
+- [Parcel](https://parceljs.org/)
+- [SASS](https://sass-lang.com/)
+- [@types/angular](https://www.npmjs.com/package/@types/angular)
+- [@types/angular-route](https://www.npmjs.com/package/@types/angular-route)
+
+If you wish to use language supersets such as [TypeScript](https://www.typescriptlang.org/), [Parcel](https://parceljs.org/) will automatically add those as dev dependencies.
