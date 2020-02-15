@@ -4,17 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build ./src/views/*.html",
-    "start": "parcel ./src/views/*.html",
+    "build": "parcel build ./src/index.html",
+    "start": "parcel ./src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Adrian Dinca",
   "license": "MIT",
   "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "@types/angular": "^1.6.57",
+    "@types/angular-route": "^1.7.0",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.25.0"
   }

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+  ng-app="app"
+>
 
 <head>
   <meta charset="UTF-8" />
@@ -13,21 +16,22 @@
   />
   <title>Parcel Starter</title>
   <link
-    href="../styles/index.scss"
+    href="./index.scss"
     rel="stylesheet"
   />
   <link
-    href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto&display=swap"
     rel="stylesheet"
   />
 </head>
 
 <body>
-  <h1>Parcel Starter</h1>
+  <ng-view></ng-view>
+
   <script
     async
     defer
-    src="../js/index.js"
+    src="./app.module.js"
   ></script>
 </body>
 

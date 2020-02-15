@@ -1,0 +1,40 @@
+<div class="counter">
+  <div class="counter__count">{{ $ctrl.count }}</div>
+
+  <div class="counter__buttons">
+    <button
+      class="counter__button"
+      title="increment by {{ $ctrl.incrementValue }}"
+      ng-click="$ctrl.increment()"
+    >
+      <material-icon>add</material-icon>
+    </button>
+    <button
+      class="counter__button"
+      title="decrement by {{ $ctrl.incrementValue }}"
+      ng-click="$ctrl.decrement()"
+    >
+      <material-icon>remove</material-icon>
+    </button>
+    <button
+      class="counter__button"
+      title="reset count"
+      ng-click="$ctrl.reset()"
+    >
+      <material-icon>refresh</material-icon>
+    </button>
+  </div>
+
+  <div class="counter__increment-value">
+    <label class="counter__increment-value-label">
+      <input
+        class="counter__increment-value-input"
+        ng-model="$ctrl.incrementValue"
+        ng-blur="$ctrl.onInputBlur($event)"
+        type="number"
+      />
+
+      <span class="counter__increment-value-label-content">Increment value</span>
+    </label>
+  </div>
+</div>
