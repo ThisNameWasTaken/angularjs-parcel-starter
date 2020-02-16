@@ -1,17 +1,43 @@
-$expansion-panel-icon-size: 1rem;
-$expansion-panel-icon-spacing: 0.5rem;
+$expansion-panel-icon-size: 1rem !default;
+$expansion-panel-icon-spacing: 0.5rem !default;
+
 $expansion-panel-indentation: $expansion-panel-icon-size +
   $expansion-panel-icon-spacing;
 
-$border-color: currentColor;
-$border-style: solid;
-$border-thickness: 0.1rem;
+$border-color: currentColor !default;
+$border-style: solid !default;
+$border-thickness: 0.1rem !default;
+
 $border-width: $expansion-panel-indentation;
 $border-height: 1rem;
 
 .expansion-panel {
   display: block;
   position: relative;
+
+  &[open] {
+    &::before {
+      content: '';
+      position: absolute;
+      top: $expansion-panel-icon-size / 2;
+      left: ($expansion-panel-icon-size - $border-thickness) / 2;
+
+      height: 50%;
+      width: $expansion-panel-icon-spacing;
+
+      border-color: $border-color;
+      border-radius: 0 0 0 2 * $border-thickness;
+      border-style: $border-style;
+      border-width: 0 0 $border-thickness $border-thickness;
+    }
+
+    &[style*='--expansion-panel-border-height:'] {
+      &::before {
+        height: var(--expansion-panel-border-height, 0px);
+        border-width: 0 0 $border-thickness $border-thickness;
+      }
+    }
+  }
 
   &__details {
     margin-left: $expansion-panel-indentation;
@@ -33,13 +59,13 @@ $border-height: 1rem;
       position: absolute;
 
       top: -$expansion-panel-icon-size / 2;
-      left: -($border-width + $border-thickness / 2 -
-            $expansion-panel-icon-spacing);
+      left: -($border-width + $border-thickness / 2 - $expansion-panel-icon-size /
+            2);
       width: $border-width;
       height: $border-height;
 
       border-color: $border-color;
-      border-radius: 0 0 0 calc(2 * $border-thickness);
+      border-radius: 0 0 0 2 * $border-thickness;
       border-style: $border-style;
       border-width: 0 0 $border-thickness $border-thickness;
     }

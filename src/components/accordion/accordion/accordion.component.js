@@ -40,10 +40,15 @@ angular.module('accordion.component').component('appAccordion', {
           lastExpansionPanels.forEach(panel => {
             const parentPanel = findParentExpansionPanel(panel);
 
+            const borderHeight = Math.max(
+              panel.getBoundingClientRect().top -
+                parentPanel.getBoundingClientRect().top,
+              0
+            );
+
             parentPanel.style.setProperty(
               '--expansion-panel-border-height',
-              `${panel.getBoundingClientRect().top -
-                parentPanel.getBoundingClientRect().top}px`
+              `${borderHeight}px`
             );
           });
         });
