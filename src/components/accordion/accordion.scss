@@ -1,25 +1,26 @@
-$accordion-icon-size: 1rem;
-$accordion-icon-spacing: 0.5rem;
-$accordion-indentation: $accordion-icon-size + $accordion-icon-spacing;
+$expansion-panel-icon-size: 1rem;
+$expansion-panel-icon-spacing: 0.5rem;
+$expansion-panel-indentation: $expansion-panel-icon-size +
+  $expansion-panel-icon-spacing;
 
 $border-color: currentColor;
 $border-style: solid;
 $border-thickness: 0.1rem;
-$border-width: $accordion-indentation;
+$border-width: $expansion-panel-indentation;
 $border-height: 1rem;
 
-.accordion {
+.expansion-panel {
   display: block;
   position: relative;
 
   &__details {
-    margin-left: $accordion-indentation;
+    margin-left: $expansion-panel-indentation;
   }
 
   &__summary {
     display: list-item;
     position: relative;
-    padding-left: $accordion-indentation;
+    padding-left: $expansion-panel-indentation;
 
     &::-webkit-details-marker {
       display: none;
@@ -31,8 +32,9 @@ $border-height: 1rem;
       content: '';
       position: absolute;
 
-      top: -$accordion-icon-size / 2;
-      left: -($border-width + $border-thickness / 2 - $accordion-icon-spacing);
+      top: -$expansion-panel-icon-size / 2;
+      left: -($border-width + $border-thickness / 2 -
+            $expansion-panel-icon-spacing);
       width: $border-width;
       height: $border-height;
 

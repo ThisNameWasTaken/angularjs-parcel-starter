@@ -2,13 +2,13 @@ import angular from 'angular';
 
 import '../../arrow-icon/arrow-icon.module';
 
-import summaryTemplate from './accordion-summary.template.html';
+import summaryTemplate from './expansion-panel-summary.template.html';
 
-angular.module('accordion.summary.directive', ['arrow-icon']);
+angular.module('expansionPanelSummary.directive', ['arrow-icon']);
 
 angular
-  .module('accordion.summary.directive')
-  .directive('appAccordionSummary', function() {
+  .module('expansionPanelSummary.directive')
+  .directive('appExpansionPanelSummary', function() {
     return {
       replace: true,
       transclude: true,
@@ -24,8 +24,8 @@ angular
            */
           function isArrowIcon(element) {
             return (
-              element.classList.contains('accordion__icon') ||
-              element.parentElement.classList.contains('accordion__icon')
+              element.classList.contains('expansion-panel__icon') ||
+              element.parentElement.classList.contains('expansion-panel__icon')
             );
           }
 

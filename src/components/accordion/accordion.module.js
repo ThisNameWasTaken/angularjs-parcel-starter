@@ -1,11 +1,11 @@
 import angular from 'angular';
 
-import './accordion/accordion.directive';
-import './accordion-details/accordion-details.directive';
-import './accordion-summary/accordion-summary.directive';
+import './expansion-panel/expansion-panel.directive';
+import './expansion-panel-details/expansion-panel-details.directive';
+import './expansion-panel-summary/expansion-panel-summary.directive';
 
 angular.module('accordion', [
-  'accordion.directive',
-  'accordion.details.directive',
-  'accordion.summary.directive',
+  'expansionPanel.directive',
+  'expansionPanelDetails.directive',
+  'expansionPanelSummary.directive',
 ]);
