@@ -1,11 +1,33 @@
+$accordion-icon-size: 1rem;
+$accordion-indentation: $accordion-icon-size + 0.5rem;
+
 .accordion {
   display: block;
+  position: relative;
+
+  &__details {
+    margin-left: $accordion-indentation;
+  }
 
   &__summary {
     display: list-item;
+    position: relative;
+    padding-left: $accordion-indentation;
 
     &::-webkit-details-marker {
       display: none;
     }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center center;
+    cursor: pointer;
+  }
+
+  &[open] > &__summary > &__icon {
+    transform: rotate(90deg);
   }
 }
