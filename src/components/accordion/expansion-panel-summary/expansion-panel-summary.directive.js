@@ -2,6 +2,7 @@ import angular from 'angular';
 
 import '../../arrow-icon/arrow-icon.module';
 
+// @ts-ignore
 import summaryTemplate from './expansion-panel-summary.template.html';
 
 angular.module('expansionPanelSummary.directive', ['arrow-icon']);
