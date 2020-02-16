@@ -1,5 +1,9 @@
 .accordion {
+  display: block;
+
   &__summary {
+    display: list-item;
+
     &::-webkit-details-marker {
       display: none;
     }
