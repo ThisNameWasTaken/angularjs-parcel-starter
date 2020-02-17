@@ -8,8 +8,9 @@ import indexTemplate from './pages/index.html';
 
 import './components/counter/counter.module';
 import './components/accordion/accordion.module';
+import './components/table/table.module';
 
-angular.module('app', ['ngRoute', 'counter', 'accordion']);
+angular.module('app', ['ngRoute', 'counter', 'accordion', 'table']);
 
 angular.module('app').config([
   '$routeProvider',
