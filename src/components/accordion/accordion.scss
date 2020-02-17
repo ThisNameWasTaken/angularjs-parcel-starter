@@ -27,19 +27,29 @@ $border-height: nth($expansion-panel-details-padding, 1);
         nth($expansion-panel-summary-padding, 1);
       left: ($expansion-panel-icon-size - $border-thickness) / 2;
 
-      height: 50%;
+      height: var(--last-expansion-panel-border-height, 0px);
       width: $expansion-panel-icon-spacing +
-        nth($expansion-panel-details-padding, 2) / 2;
+        nth($expansion-panel-details-padding, 2) / 2 + $border-width;
 
       border-color: $border-color;
       border-style: $border-style;
       border-width: 0 0 $border-thickness $border-thickness;
     }
 
+    & > .expansion-panel__details {
+      padding-left: 2 * $border-width;
+    }
+
     &[style*='--expansion-panel-border-height:'] {
       &::before {
+        width: $expansion-panel-icon-spacing +
+          nth($expansion-panel-details-padding, 2) / 2;
         height: var(--expansion-panel-border-height, 0px);
         border-width: 0 0 $border-thickness $border-thickness;
+      }
+
+      & > .expansion-panel__details {
+        padding-left: $border-width;
       }
     }
   }

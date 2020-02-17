@@ -50,6 +50,25 @@ angular.module('accordion.component').component('appAccordion', {
               `${borderHeight}px`
             );
           });
+
+          const panels = Array.from(
+            entry.target.querySelectorAll('.expansion-panel')
+          );
+
+          panels.forEach(panel => {
+            const childPanel = panel.querySelector('.expansion-panel');
+
+            if (childPanel) return;
+
+            const summaryHeight = panel
+              .querySelector('.expansion-panel__summary')
+              .getBoundingClientRect().height;
+
+            panel.style.setProperty(
+              '--last-expansion-panel-border-height',
+              `${summaryHeight}px`
+            );
+          });
         });
       });
 
