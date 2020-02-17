@@ -4,8 +4,8 @@ $expansion-panel-icon-spacing: 0.5rem !default;
 $expansion-panel-indentation: $expansion-panel-icon-size +
   $expansion-panel-icon-spacing;
 
-$expansion-panel-summary-padding: 1rem 1rem;
-$expansion-panel-details-padding: 1rem 1rem;
+$expansion-panel-summary-padding: 0.5rem 0.5rem;
+$expansion-panel-details-padding: 0.5rem 0.5rem;
 
 $border-color: currentColor !default;
 $border-style: solid !default;
@@ -32,7 +32,6 @@ $border-height: nth($expansion-panel-details-padding, 1);
         nth($expansion-panel-details-padding, 2) / 2;
 
       border-color: $border-color;
-      border-radius: 0 0 0 2 * $border-thickness;
       border-style: $border-style;
       border-width: 0 0 $border-thickness $border-thickness;
     }
@@ -73,7 +72,6 @@ $border-height: nth($expansion-panel-details-padding, 1);
       height: $border-height;
 
       border-color: $border-color;
-      border-radius: 0 0 0 2 * $border-thickness;
       border-style: $border-style;
       border-width: 0 0 $border-thickness $border-thickness;
     }
