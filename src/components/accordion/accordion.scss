@@ -4,12 +4,16 @@ $expansion-panel-icon-spacing: 0.5rem !default;
 $expansion-panel-indentation: $expansion-panel-icon-size +
   $expansion-panel-icon-spacing;
 
+$expansion-panel-summary-padding: 1rem 1rem;
+$expansion-panel-details-padding: 1rem 1rem;
+
 $border-color: currentColor !default;
 $border-style: solid !default;
 $border-thickness: 0.1rem !default;
 
-$border-width: $expansion-panel-indentation;
-$border-height: 1rem;
+$border-width: nth($expansion-panel-details-padding, 2) +
+  $expansion-panel-indentation;
+$border-height: nth($expansion-panel-details-padding, 1);
 
 .expansion-panel {
   display: block;
@@ -19,11 +23,13 @@ $border-height: 1rem;
     &::before {
       content: '';
       position: absolute;
-      top: $expansion-panel-icon-size / 2;
+      top: $expansion-panel-icon-size / 2 +
+        nth($expansion-panel-summary-padding, 1);
       left: ($expansion-panel-icon-size - $border-thickness) / 2;
 
       height: 50%;
-      width: $expansion-panel-icon-spacing;
+      width: $expansion-panel-icon-spacing +
+        nth($expansion-panel-details-padding, 2) / 2;
 
       border-color: $border-color;
       border-radius: 0 0 0 2 * $border-thickness;
@@ -40,13 +46,15 @@ $border-height: 1rem;
   }
 
   &__details {
-    margin-left: $expansion-panel-indentation;
+    padding: $expansion-panel-details-padding;
+    padding-left: $border-width;
   }
 
   &__summary {
     display: list-item;
     position: relative;
-    padding-left: $expansion-panel-indentation;
+    padding: $expansion-panel-summary-padding;
+    padding-left: $border-width;
 
     &::-webkit-details-marker {
       display: none;
@@ -58,7 +66,7 @@ $border-height: 1rem;
       content: '';
       position: absolute;
 
-      top: -$expansion-panel-icon-size / 2;
+      top: $expansion-panel-icon-size / 2;
       left: -($border-width + $border-thickness / 2 - $expansion-panel-icon-size /
             2);
       width: $border-width;
@@ -73,13 +81,14 @@ $border-height: 1rem;
 
   &__icon {
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     transform-origin: center center;
     cursor: pointer;
   }
 
   &[open] > &__summary > &__icon {
-    transform: rotate(90deg);
+    transform: translateY(-50%) rotate(90deg);
   }
 }
