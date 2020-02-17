@@ -4,8 +4,8 @@ $expansion-panel-icon-spacing: 0.5rem !default;
 $expansion-panel-indentation: $expansion-panel-icon-size +
   $expansion-panel-icon-spacing;
 
-$expansion-panel-summary-padding: 0.5rem 0.5rem;
-$expansion-panel-details-padding: 0.5rem 0.5rem;
+$expansion-panel-summary-padding: 0.25rem 0.25rem;
+$expansion-panel-details-padding: 0.25rem 0.25rem;
 
 $border-color: currentColor !default;
 $border-style: solid !default;
@@ -79,14 +79,13 @@ $border-height: nth($expansion-panel-details-padding, 1);
 
   &__icon {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: nth($expansion-panel-summary-padding, 1) + $border-thickness / 2;
     left: 0;
     transform-origin: center center;
     cursor: pointer;
   }
 
   &[open] > &__summary > &__icon {
-    transform: translateY(-50%) rotate(90deg);
+    transform: rotate(90deg);
   }
 }
