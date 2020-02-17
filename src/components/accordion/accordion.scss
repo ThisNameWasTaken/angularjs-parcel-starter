@@ -19,6 +19,11 @@ $border-height: nth($expansion-panel-details-padding, 1);
   display: block;
   position: relative;
 
+  &:not([open]) > &__details > * > table > tbody > tr:nth-child(n + 2),
+  &:not([open]) > &__summary > * > * > table > tbody > tr:nth-child(n + 2) {
+    display: none;
+  }
+
   &[open] {
     &::before {
       content: '';
