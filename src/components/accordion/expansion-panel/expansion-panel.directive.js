@@ -12,17 +12,38 @@ angular
       replace: true,
       transclude: true,
       template: expansionPanelTemplate,
+      scope: {
+        onOpen: '&',
+        onClose: '&',
+        onToggle: '&',
+      },
       controller: [
-        '$element',
+        '$scope',
         function(
-          /** @type {angular.IRootElementService} */
-          $element
+          /** @type {angular.IRootScopeService} */
+          $scope
         ) {
           /**
            * @param {Event} event
            */
-          this.onToggle = function(event) {
-            // Do height calculations here ...
+          $scope._onToggle = function(event) {
+            console.log($scope);
+
+            if ($scope.onToggle) {
+              $scope.onToggle(event);
+            }
+
+            const isOpen = !event.currentTarget.open;
+
+            if (isOpen) {
+              if ($scope.onOpen) {
+                $scope.onOpen(event);
+              }
+            } else {
+              if ($scope.onOpen) {
+                $scope.onClose(event);
+              }
+            }
           };
         },
       ],

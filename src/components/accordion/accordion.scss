@@ -73,6 +73,16 @@ $border-height: nth($expansion-panel-details-padding, 1);
     &::-webkit-details-marker {
       display: none;
     }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--keyboard-focused {
+      & > .expansion-panel__icon {
+        outline: 2px solid #2ab5b2;
+      }
+    }
   }
 
   &__details > & > &__summary {

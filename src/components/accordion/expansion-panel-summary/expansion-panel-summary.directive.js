@@ -55,6 +55,20 @@ angular
 
             isKeyboardEvent = isKeyboardClick && isClickOnSummary;
           };
+
+          $scope.onSummaryFocus = function(event) {
+            console.log('focus');
+            event.currentTarget.classList.add(
+              'expandable-panel__summary--keyboard-focused'
+            );
+          };
+
+          $scope.onSummaryBlur = function(event) {
+            console.log('blur');
+            event.currentTarget.classList.remove(
+              'expandable-panel__summary--keyboard-focused'
+            );
+          };
         },
       ],
     };
