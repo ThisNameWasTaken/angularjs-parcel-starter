@@ -4,8 +4,8 @@ $expansion-panel-icon-spacing: 0.5rem !default;
 $expansion-panel-indentation: $expansion-panel-icon-size +
   $expansion-panel-icon-spacing;
 
-$expansion-panel-summary-padding: 0.25rem 0.25rem;
-$expansion-panel-details-padding: 0.25rem 0.25rem;
+$expansion-panel-summary-padding: 0.5rem 0rem;
+$expansion-panel-details-padding: 0.5rem 0rem;
 
 $border-color: currentColor !default;
 $border-style: solid !default;
@@ -22,6 +22,34 @@ $border-height: nth($expansion-panel-details-padding, 1);
   &:not([open]) > &__details > * > table > tbody > tr:nth-child(n + 2),
   &:not([open]) > &__summary > * > * > table > tbody > tr:nth-child(n + 2) {
     display: none;
+  }
+
+  &:not([open]) + & > &__summary > * > * > table > thead {
+    visibility: collapse;
+  }
+
+  &:not([open]) {
+    &::before {
+      top: $expansion-panel-icon-size / 2 + 0;
+    }
+  }
+
+  &:not([open]) + &:not([open]):not(:last-of-type) > &__summary {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &:not([open]) + &:not([open]):last-of-type > &__summary {
+    padding-top: 0;
+  }
+
+  &[open] + &:not([open]):not(:last-of-type) > &__summary,
+  &:not([open]):first-of-type:not(:last-of-type) > &__summary {
+    padding-bottom: 0;
+  }
+
+  &:not([open]) + &[open] > &__summary {
+    padding-top: 0;
   }
 
   &[open] {
