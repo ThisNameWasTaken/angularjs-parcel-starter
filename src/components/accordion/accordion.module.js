@@ -5,9 +5,4 @@ import './expansion-panel/expansion-panel.directive';
 import './expansion-panel-details/expansion-panel-details.directive';
 import './expansion-panel-summary/expansion-panel-summary.directive';
 
-angular.module('accordion', [
-  'accordion.component',
-  'expansionPanel.directive',
-  'expansionPanelDetails.directive',
-  'expansionPanelSummary.directive',
-]);
+angular.module('accordion', ['accordion.component']);

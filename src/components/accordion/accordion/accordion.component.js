@@ -1,13 +1,24 @@
 import angular from 'angular';
 
+import '../expansion-panel/expansion-panel.directive';
+import '../expansion-panel-summary/expansion-panel-summary.directive';
+import '../expansion-panel-details/expansion-panel-details.directive';
+
 // @ts-ignore
 import accordionTemplate from './accordion.template.html';
 
-angular.module('accordion.component', []);
+angular.module('accordion.component', [
+  'expansionPanel.directive',
+  'expansionPanelSummary.directive',
+  'expansionPanelDetails.directive',
+]);
 
 angular.module('accordion.component').component('appAccordion', {
   transclude: true,
   template: accordionTemplate,
+  bindings: {
+    data: '<',
+  },
   controller: [
     '$element',
     function(
@@ -73,7 +84,7 @@ angular.module('accordion.component').component('appAccordion', {
       });
 
       this.$onInit = function() {
-        resizeObserver.observe($element.children()[0]);
+        resizeObserver.observe($element[0]);
       };
 
       this.$onDestroy = function() {

@@ -1,4 +1,26 @@
-<div
-  class="accordion"
-  ng-transclude
-></div>
+<script
+  type="text/ng-template"
+  id="expansionPanelTemplate"
+>
+  <app-expansion-panel-summary>
+    <app-table data="data.summary"></app-table>
+  </app-expansion-panel-summary>
+
+  <app-expansion-panel-details ng-if="!data.details[0].summary">
+    <app-table data="data.details"></app-table>
+  </app-expansion-panel-details>
+
+  <app-expansion-panel-details ng-if="data.details[0].summary">
+    <app-expansion-panel
+      ng-repeat="data in data.details"
+      ng-include="'expansionPanelTemplate'"
+    ></app-expansion-panel>
+  </app-expansion-panel-details>
+</script>
+
+<div class="accordion">
+  <app-expansion-panel
+    ng-repeat="data in $ctrl.data"
+    ng-include="'expansionPanelTemplate'"
+  ></app-expansion-panel>
+</div>

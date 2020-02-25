@@ -10,7 +10,6 @@ angular
   .directive('appExpansionPanel', function() {
     return {
       replace: true,
-      transclude: true,
       template: expansionPanelTemplate,
       scope: {
         onOpen: '&',
